@@ -9,9 +9,7 @@ A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrast
 │   ├── index.html
 │   └── styles.css
 └── infrastructure/
-    ├── cdk/                     # AWS CDK stack (TypeScript)
-    │   └── stack.ts
-    └── terraform/               # Terraform alternative
+    └── terraform/
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
@@ -26,20 +24,10 @@ A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrast
 
 ## Deploying
 
-### Option A — Terraform
-
 ```bash
 cd infrastructure/terraform
 terraform init
 terraform apply -var="domain_name=yourdomain.com" -var="hosted_zone_id=ZXXXXXXXXXXXXX"
-```
-
-### Option B — AWS CDK
-
-```bash
-cd infrastructure/cdk
-npm install
-cdk deploy --context domainName=yourdomain.com --context hostedZoneId=ZXXXXXXXXXXXXX
 ```
 
 ### Upload Site Files
@@ -52,4 +40,4 @@ aws s3 sync site/ s3://yourdomain.com --delete
 
 - AWS account with a registered domain and Route 53 hosted zone
 - AWS CLI configured (`aws configure`)
-- Terraform ≥ 1.5 **or** Node.js + AWS CDK v2 installed
+- Terraform ≥ 1.5

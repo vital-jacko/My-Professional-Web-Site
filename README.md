@@ -1,6 +1,6 @@
-# Jackie — Personal Professional Website
+# Jackie Schroeder — Data by Schroeder
 
-A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrastructure defined in both AWS CDK (TypeScript) and Terraform.
+A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrastructure defined in Terraform.
 
 ## Project Structure
 
@@ -27,13 +27,13 @@ A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrast
 ```bash
 cd infrastructure/terraform
 terraform init
-terraform apply -var="domain_name=yourdomain.com" -var="hosted_zone_id=ZXXXXXXXXXXXXX"
+terraform apply
 ```
 
 ### Upload Site Files
 
 ```bash
-aws s3 sync site/ s3://yourdomain.com --delete
+aws s3 sync site/ s3://databyschroeder.com --delete
 ```
 
 ## Prerequisites

@@ -2,41 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jackie Schroeder| Solutions Architect & Data Analyst</title>
+  <title>Jackie Schroeder | Solutions Architect & Data Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Jackie, Solutions Architect, Data Analyst, and AI practitioner." />
+  <meta name="description" content="Portfolio of Jackie Schroeder, Solutions Architect, Data Analyst, and AI practitioner." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header class="hero">
     <div class="hero-content">
+      <div class="hero-badge">Available for remote roles</div>
       <h1>Jackie Schroeder</h1>
       <h2>Solutions Architect · Data Analyst · AI Practitioner</h2>
       <p>I design data and cloud solutions that are reliable, scalable, and actually used.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Get in Touch</a>
+        <a href="#" class="btn primary" onclick="switchTab('projects')">View Projects</a>
+        <a href="#" class="btn secondary" onclick="switchTab('contact')">Get in Touch</a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="about" class="section">
+  <nav class="tab-nav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" onclick="switchTab('about')">About</button>
+      <button class="tab-btn" onclick="switchTab('skills')">Skills</button>
+      <button class="tab-btn" onclick="switchTab('projects')">Projects</button>
+      <button class="tab-btn" onclick="switchTab('built-with')">Built With</button>
+      <button class="tab-btn" onclick="switchTab('contact')">Contact</button>
+    </div>
+  </nav>
+
+  <main class="tab-content-wrapper">
+
+    <section id="about" class="tab-panel active">
       <h3>About</h3>
       <p>
         I have 13+ years of experience in data analytics, cloud architecture, and AI-driven solutions,
         with a focus on building reliable, maintainable systems that support real business decisions.
       </p>
       <p>
-        My work spans AWS architecture, SQL engineering, dashboarding, and workflow optimization—
+        My work spans AWS architecture, SQL engineering, dashboarding, and workflow optimization —
         especially in complex operational environments.
       </p>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number">13+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">AWS</span>
+          <span class="stat-label">Cloud Platform</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">SQL</span>
+          <span class="stat-label">Data Engineering</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">AI</span>
+          <span class="stat-label">LLM Workflows</span>
+        </div>
+      </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="tab-panel">
       <h3>Skills</h3>
       <div class="grid">
         <div class="card">
+          <div class="card-icon">☁️</div>
           <h4>Cloud & Architecture</h4>
           <ul>
             <li>AWS (S3, CloudFront, Lambda, IAM, RDS, Athena)</li>
@@ -45,6 +77,7 @@
           </ul>
         </div>
         <div class="card">
+          <div class="card-icon">📊</div>
           <h4>Data & Analytics</h4>
           <ul>
             <li>SQL, data modeling, performance tuning</li>
@@ -53,6 +86,7 @@
           </ul>
         </div>
         <div class="card">
+          <div class="card-icon">🤖</div>
           <h4>AI & Automation</h4>
           <ul>
             <li>LLM-assisted workflows</li>
@@ -63,55 +97,117 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="tab-panel">
       <h3>Selected Projects</h3>
       <div class="grid">
         <div class="card">
+          <div class="card-icon">🏗️</div>
           <h4>Demo Data Lake for Client Showcases</h4>
           <p>
             Designed and implemented an anonymized, date-shifted demo data lake to safely showcase
             analytics capabilities without exposing sensitive information.
           </p>
-          <p class="meta">Tech: AWS, SQL, Athena, ETL</p>
+          <p class="meta">Tech: AWS · SQL · Athena · ETL</p>
         </div>
         <div class="card">
+          <div class="card-icon">📈</div>
           <h4>Operational Dashboards for Midstream Assets</h4>
           <p>
             Built performance-focused dashboards for gas plants and gathering systems, balancing
             usability, speed, and data fidelity.
           </p>
-          <p class="meta">Tech: Spotfire, SQL, Databricks</p>
+          <p class="meta">Tech: Spotfire · SQL · Databricks</p>
         </div>
         <div class="card">
+          <div class="card-icon">🎨</div>
           <h4>UI/UX Review Framework for Analytics Tools</h4>
           <p>
             Created a scenario-based, checklist-driven approach to reviewing analytics UIs, improving
             adoption and reducing user friction.
           </p>
-          <p class="meta">Focus: UX, workflow optimization</p>
+          <p class="meta">Focus: UX · Workflow Optimization</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h3>Contact</h3>
+    <section id="built-with" class="tab-panel">
+      <h3>How This Site is Built</h3>
       <p>
-        I’m open to remote roles and collaborations focused on data, cloud, and analytics.
+        This portfolio is deployed on AWS using a fully infrastructure-as-code setup managed with Terraform.
       </p>
-      <ul class="contact-list">
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/">Your LinkedIn URL</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/">Your GitHub URL</a></li>
-        <li><strong>Email:</strong> Use the contact form on this page or via LinkedIn.</li>
-      </ul>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h4>Hosting & CDN</h4>
+          <ul>
+            <li>S3 — private static file hosting</li>
+            <li>CloudFront — global CDN with HTTPS</li>
+            <li>OAC — CloudFront-only S3 access</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h4>Security</h4>
+          <ul>
+            <li>ACM — DNS-validated TLS certificate</li>
+            <li>TLS 1.2 minimum enforced</li>
+            <li>SSL enforced on S3, no HTTP access</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h4>Infrastructure</h4>
+          <ul>
+            <li>Terraform — all infrastructure as code</li>
+            <li>Route 53 — DNS and domain management</li>
+            <li>CloudFront access logging enabled</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source-link">
+        View the full source on <a href="https://github.com/vital-jacko/My-Professional-Web-Site" target="_blank" rel="noopener">GitHub →</a>
+      </p>
     </section>
+
+    <section id="contact" class="tab-panel">
+      <h3>Contact</h3>
+      <p>I'm open to remote roles and collaborations focused on data, cloud, and analytics.</p>
+      <div class="contact-grid">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">💼</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">Connect with me</span>
+        </a>
+        <a href="https://github.com/vital-jacko" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">🐙</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/vital-jacko</span>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">Message via LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Jackie. All rights reserved.</p>
+    <p>© <span id="year"></span> Jackie Schroeder. All rights reserved.</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function switchTab(id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        if (b.getAttribute('onclick').includes(id)) b.classList.add('active');
+      });
+    }
   </script>
 </body>
 </html>

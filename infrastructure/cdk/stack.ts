@@ -25,7 +25,15 @@ export class PortfolioStack extends cdk.Stack {
       bucketName: props.domainName,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
+      enforceSSL: true,
       versioned: true,
+    });
+
+    const logBucket = new s3.Bucket(this, 'LogBucket', {
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      encryption: s3.BucketEncryption.S3_MANAGED,
+      enforceSSL: true,
+      objectOwnership: s3.ObjectOwnership.BUCKET_OWNER_PREFERRED,
     });
 
     const cert = new acm.DnsValidatedCertificate(this, 'Cert', {
@@ -40,9 +48,12 @@ export class PortfolioStack extends cdk.Stack {
       domainNames: [props.domainName, `www.${props.domainName}`],
       certificate: cert,
       defaultBehavior: {
-        origin: new origins.S3Origin(bucket),
+        origin: origins.S3BucketOrigin.withOriginAccessControl(bucket),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
+      enableLogging: true,
+      logBucket,
+      logFilePrefix: 'cloudfront/',
     });
 
     new route53.ARecord(this, 'RootRecord', {

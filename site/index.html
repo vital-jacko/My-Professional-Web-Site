@@ -4,66 +4,184 @@
   <meta charset="UTF-8" />
   <title>Jackie Schroeder | Solutions Architect & Data Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Jackie Schroeder, Solutions Architect, Data Analyst, and AI practitioner." />
+  <meta name="description" content="Portfolio of Jackie Schroeder, Solutions Architect, Data Analyst, and AI practitioner with 13+ years of experience." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Available for remote roles</div>
-      <h1>Jackie Schroeder</h1>
-      <h2>Solutions Architect · Data Analyst · AI Practitioner</h2>
-      <p>I design data and cloud solutions that are reliable, scalable, and actually used.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn primary" onclick="switchTab('projects')">View Projects</a>
-        <a href="#" class="btn secondary" onclick="switchTab('contact')">Get in Touch</a>
+      <div class="hero-text">
+        <div class="hero-badge">Available for remote roles</div>
+        <h1>Jackie Schroeder</h1>
+        <h2>Solutions Architect · Data Analyst · AI Practitioner</h2>
+        <p>Data-driven problem solver with 13+ years of experience designing end-to-end data solutions focused on reliability, performance, and long-term maintainability.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn primary" onclick="switchTab('experience'); return false;">View Experience</a>
+          <a href="#" class="btn secondary" onclick="switchTab('contact'); return false;">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="cloud-background.png" alt="Cloud and computer illustration" />
       </div>
     </div>
   </header>
 
   <nav class="tab-nav">
     <div class="tab-nav-inner">
-      <button class="tab-btn active" onclick="switchTab('about')">About</button>
-      <button class="tab-btn" onclick="switchTab('skills')">Skills</button>
-      <button class="tab-btn" onclick="switchTab('projects')">Projects</button>
-      <button class="tab-btn" onclick="switchTab('built-with')">Built With</button>
-      <button class="tab-btn" onclick="switchTab('contact')">Contact</button>
+      <button class="tab-btn active"    onclick="switchTab('about')">About</button>
+      <button class="tab-btn"           onclick="switchTab('experience')">Experience</button>
+      <button class="tab-btn"           onclick="switchTab('skills')">Skills</button>
+      <button class="tab-btn"           onclick="switchTab('projects')">Projects</button>
+      <button class="tab-btn"           onclick="switchTab('built-with')">Built With</button>
+      <button class="tab-btn"           onclick="switchTab('contact')">Contact</button>
     </div>
   </nav>
 
   <main class="tab-content-wrapper">
 
+    <!-- ── About ── -->
     <section id="about" class="tab-panel active">
       <h3>About</h3>
       <p>
-        I have 13+ years of experience in data analytics, cloud architecture, and AI-driven solutions,
-        with a focus on building reliable, maintainable systems that support real business decisions.
+        Data-driven problem solver with 13+ years of experience in data analytics, data engineering, and cloud services.
+        Specialized in designing end-to-end data solutions with a focus on reliability, performance, and long-term maintainability.
       </p>
       <p>
-        My work spans AWS architecture, SQL engineering, dashboarding, and workflow optimization —
-        especially in complex operational environments.
+        Extensive experience with AWS services, supporting teams across engineering, operations, and leadership.
+        Delivered analytics that drive decisions, reduce risk, and unlock new opportunities.
+        Focused on strengthening infrastructure foundations through thoughtful design and modern engineering practices.
       </p>
+
       <div class="stat-row">
         <div class="stat">
           <span class="stat-number">13+</span>
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat">
-          <span class="stat-number">AWS</span>
-          <span class="stat-label">Cloud Platform</span>
+          <span class="stat-number">3</span>
+          <span class="stat-label">AWS Certifications</span>
         </div>
         <div class="stat">
-          <span class="stat-number">SQL</span>
-          <span class="stat-label">Data Engineering</span>
+          <span class="stat-number">M.B.A.</span>
+          <span class="stat-label">University of Mary</span>
         </div>
         <div class="stat">
-          <span class="stat-number">AI</span>
-          <span class="stat-label">LLM Workflows</span>
+          <span class="stat-number">90%</span>
+          <span class="stat-label">Increase in Data-Driven Decisions</span>
+        </div>
+      </div>
+
+      <h4 class="section-subheading">AWS Certifications</h4>
+      <div class="cert-row">
+        <div class="cert-card">
+          <!-- AWS Cloud Practitioner badge -->
+          <svg class="cert-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="AWS Certified Cloud Practitioner">
+            <rect width="100" height="100" rx="12" fill="#232F3E"/>
+            <text x="50" y="38" text-anchor="middle" fill="#FF9900" font-size="11" font-family="sans-serif" font-weight="bold">AWS</text>
+            <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="7.5" font-family="sans-serif">Certified</text>
+            <text x="50" y="63" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">Cloud</text>
+            <text x="50" y="73" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">Practitioner</text>
+          </svg>
+          <span class="cert-name">AWS Certified Cloud Practitioner</span>
+        </div>
+        <div class="cert-card">
+          <!-- AWS AI Practitioner badge -->
+          <svg class="cert-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="AWS Certified AI Practitioner">
+            <rect width="100" height="100" rx="12" fill="#232F3E"/>
+            <text x="50" y="38" text-anchor="middle" fill="#FF9900" font-size="11" font-family="sans-serif" font-weight="bold">AWS</text>
+            <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="7.5" font-family="sans-serif">Certified</text>
+            <text x="50" y="63" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">AI</text>
+            <text x="50" y="73" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">Practitioner</text>
+          </svg>
+          <span class="cert-name">AWS Certified AI Practitioner</span>
+        </div>
+        <div class="cert-card">
+          <!-- AWS Solutions Architect badge -->
+          <svg class="cert-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="AWS Certified Solutions Architect">
+            <rect width="100" height="100" rx="12" fill="#232F3E"/>
+            <text x="50" y="38" text-anchor="middle" fill="#FF9900" font-size="11" font-family="sans-serif" font-weight="bold">AWS</text>
+            <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="7.5" font-family="sans-serif">Certified</text>
+            <text x="50" y="63" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">Solutions</text>
+            <text x="50" y="73" text-anchor="middle" fill="#FF9900" font-size="7" font-family="sans-serif" font-weight="bold">Architect</text>
+          </svg>
+          <span class="cert-name">AWS Certified Solutions Architect</span>
         </div>
       </div>
     </section>
 
+    <!-- ── Experience ── -->
+    <section id="experience" class="tab-panel">
+      <h3>Experience</h3>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Crescent Energy</span>
+            <span class="timeline-role">Senior Data Analyst</span>
+            <span class="timeline-date">Nov 2023 — Present</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Spearheaded AWS integration and data analytics initiatives, improving data workflows and enhancing system efficiency.</li>
+            <li>Developed and maintained dashboards ensuring accurate data representation for stakeholders, leading to a <strong>90% increase in data-driven decision-making</strong>.</li>
+            <li>Supported the development of Streamlit applications, boosting user engagement in carbon tracking initiatives.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">AWS</span><span class="tag">Streamlit</span><span class="tag">Dashboards</span><span class="tag">Carbon Tracking</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Hess Corporation</span>
+            <span class="timeline-role">Sr Specialist — Analytics & Technical Data Management</span>
+            <span class="timeline-date">Apr 2022 — Nov 2023</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Led end-to-end data engineering and integration initiatives, architecting scalable pipelines and analytics solutions across Spotfire, Power BI, and cloud platforms.</li>
+            <li>Designed and validated machine learning frameworks including distribution analysis, multi-model testing, and model performance evaluation for accurate forecasting.</li>
+            <li>Delivered advanced BI application integrations, developing custom plugins and extensions that improved user adoption across business teams.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">Spotfire</span><span class="tag">Power BI</span><span class="tag">ML Frameworks</span><span class="tag">ETL Pipelines</span><span class="tag">Cloud</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Hess Corporation</span>
+            <span class="timeline-role">Supervisor, Data Analyst</span>
+            <span class="timeline-date">Mar 2018 — Apr 2022</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Supervised a team of four data analysts, driving high-quality delivery across SQL development, database management, Spotfire analytics, and enterprise data applications.</li>
+            <li>Led midstream reporting operations using Honeywell datasets, ensuring accuracy, consistency, and timely insights for operational and leadership stakeholders.</li>
+            <li>Built and maintained enterprise dashboards leveraging Data Lake and multi-source datasets, improving visibility into key metrics across the organization.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">Team Leadership</span><span class="tag">SQL</span><span class="tag">Data Lake</span><span class="tag">Spotfire</span><span class="tag">Honeywell</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Hess Corporation</span>
+            <span class="timeline-role">Senior Data Analyst</span>
+            <span class="timeline-date">Feb 2014 — Mar 2018</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Supported midstream operations through dashboard development and reporting for gas plants and gathering systems.</li>
+            <li>Built and maintained analytics reports ensuring data accuracy and operational visibility.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tag">Midstream</span><span class="tag">Dashboards</span><span class="tag">Reporting</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Skills ── -->
     <section id="skills" class="tab-panel">
       <h3>Skills</h3>
       <div class="grid">
@@ -72,8 +190,9 @@
           <h4>Cloud & Architecture</h4>
           <ul>
             <li>AWS (S3, CloudFront, Lambda, IAM, RDS, Athena)</li>
-            <li>Data lake and ETL design</li>
-            <li>Security and access patterns</li>
+            <li>Data lake and ETL pipeline design</li>
+            <li>Security, access patterns, and IAM</li>
+            <li>Infrastructure as Code (Terraform)</li>
           </ul>
         </div>
         <div class="card">
@@ -81,8 +200,9 @@
           <h4>Data & Analytics</h4>
           <ul>
             <li>SQL, data modeling, performance tuning</li>
-            <li>Spotfire, dashboard design, UX for analytics</li>
+            <li>Spotfire, Power BI, dashboard design</li>
             <li>Operational reporting and monitoring</li>
+            <li>Data engineering and integration</li>
           </ul>
         </div>
         <div class="card">
@@ -90,51 +210,93 @@
           <h4>AI & Automation</h4>
           <ul>
             <li>LLM-assisted workflows</li>
+            <li>ML framework design and validation</li>
             <li>Automation of repetitive analysis tasks</li>
-            <li>Integration of AI into existing toolchains</li>
+            <li>Streamlit application development</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h4>Leadership & Strategy</h4>
+          <ul>
+            <li>Team supervision and mentoring</li>
+            <li>Stakeholder communication</li>
+            <li>UX review and analytics adoption</li>
+            <li>M.B.A. — Business Administration</li>
           </ul>
         </div>
       </div>
+
+      <h4 class="section-subheading">Technologies & Tools</h4>
+      <div class="tag-cloud">
+        <span class="tag">AWS</span>
+        <span class="tag">S3</span>
+        <span class="tag">CloudFront</span>
+        <span class="tag">Lambda</span>
+        <span class="tag">Athena</span>
+        <span class="tag">RDS</span>
+        <span class="tag">IAM</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Spotfire</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Databricks</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Python</span>
+        <span class="tag">ETL</span>
+        <span class="tag">Data Lake</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Git</span>
+      </div>
     </section>
 
+    <!-- ── Projects ── -->
     <section id="projects" class="tab-panel">
       <h3>Selected Projects</h3>
       <div class="grid">
         <div class="card">
           <div class="card-icon">🏗️</div>
           <h4>Demo Data Lake for Client Showcases</h4>
-          <p>
-            Designed and implemented an anonymized, date-shifted demo data lake to safely showcase
-            analytics capabilities without exposing sensitive information.
-          </p>
-          <p class="meta">Tech: AWS · SQL · Athena · ETL</p>
+          <p>Designed and implemented an anonymized, date-shifted demo data lake to safely showcase analytics capabilities without exposing sensitive information. Enabled repeatable client demos with production-quality data fidelity.</p>
+          <p class="meta">AWS · SQL · Athena · ETL</p>
         </div>
         <div class="card">
           <div class="card-icon">📈</div>
           <h4>Operational Dashboards for Midstream Assets</h4>
-          <p>
-            Built performance-focused dashboards for gas plants and gathering systems, balancing
-            usability, speed, and data fidelity.
-          </p>
-          <p class="meta">Tech: Spotfire · SQL · Databricks</p>
+          <p>Built performance-focused dashboards for gas plants and gathering systems, balancing usability, speed, and data fidelity. Served operational and leadership stakeholders with real-time visibility into key metrics.</p>
+          <p class="meta">Spotfire · SQL · Databricks · Honeywell</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h4>Streamlit Carbon Tracking Application</h4>
+          <p>Supported development of Streamlit applications for carbon tracking initiatives at Crescent Energy, boosting user engagement and enabling data-driven sustainability reporting.</p>
+          <p class="meta">Streamlit · Python · AWS · Analytics</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h4>ML Framework Design & Validation</h4>
+          <p>Designed and validated machine learning frameworks including distribution analysis, multi-model testing, and model performance evaluation — enabling more accurate forecasting and data-driven decision support.</p>
+          <p class="meta">Python · ML · Power BI · Spotfire</p>
         </div>
         <div class="card">
           <div class="card-icon">🎨</div>
           <h4>UI/UX Review Framework for Analytics Tools</h4>
-          <p>
-            Created a scenario-based, checklist-driven approach to reviewing analytics UIs, improving
-            adoption and reducing user friction.
-          </p>
-          <p class="meta">Focus: UX · Workflow Optimization</p>
+          <p>Created a scenario-based, checklist-driven approach to reviewing analytics UIs, improving adoption and reducing user friction across enterprise analytics platforms.</p>
+          <p class="meta">UX · Workflow Optimization · Analytics</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔌</div>
+          <h4>Custom BI Plugins & Extensions</h4>
+          <p>Delivered advanced BI application integrations by developing custom plugins, extensions, and app components that enhanced analytics capabilities and improved user adoption across business teams.</p>
+          <p class="meta">Spotfire · Power BI · Integration</p>
         </div>
       </div>
     </section>
 
+    <!-- ── Built With ── -->
     <section id="built-with" class="tab-panel">
       <h3>How This Site is Built</h3>
-      <p>
-        This portfolio is deployed on AWS using a fully infrastructure-as-code setup managed with Terraform.
-      </p>
+      <p>This portfolio is deployed on AWS using a fully infrastructure-as-code setup managed with Terraform — practicing what I preach.</p>
       <div class="grid">
         <div class="card">
           <div class="card-icon">🚀</div>
@@ -152,6 +314,7 @@
             <li>ACM — DNS-validated TLS certificate</li>
             <li>TLS 1.2 minimum enforced</li>
             <li>SSL enforced on S3, no HTTP access</li>
+            <li>CloudFront access logging enabled</li>
           </ul>
         </div>
         <div class="card">
@@ -160,7 +323,8 @@
           <ul>
             <li>Terraform — all infrastructure as code</li>
             <li>Route 53 — DNS and domain management</li>
-            <li>CloudFront access logging enabled</li>
+            <li>S3 versioning and AES256 encryption</li>
+            <li>Zero servers — fully serverless</li>
           </ul>
         </div>
       </div>
@@ -169,32 +333,33 @@
       </p>
     </section>
 
+    <!-- ── Contact ── -->
     <section id="contact" class="tab-panel">
       <h3>Contact</h3>
-      <p>I'm open to remote roles and collaborations focused on data, cloud, and analytics.</p>
+      <p>I'm open to remote roles and collaborations focused on data, cloud, and analytics. Based in Stanley, North Dakota.</p>
       <div class="contact-grid">
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="contact-card">
+        <a href="https://www.linkedin.com/in/jacqueline-schroeder-ab7b7210b" target="_blank" rel="noopener" class="contact-card">
           <span class="contact-icon">💼</span>
           <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">Connect with me</span>
+          <span class="contact-value">jacqueline-schroeder</span>
         </a>
         <a href="https://github.com/vital-jacko" target="_blank" rel="noopener" class="contact-card">
           <span class="contact-icon">🐙</span>
           <span class="contact-label">GitHub</span>
           <span class="contact-value">github.com/vital-jacko</span>
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="contact-card">
-          <span class="contact-icon">✉️</span>
-          <span class="contact-label">Email</span>
-          <span class="contact-value">Message via LinkedIn</span>
-        </a>
+        <div class="contact-card">
+          <span class="contact-icon">📍</span>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Stanley, North Dakota — Remote</span>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Jackie Schroeder. All rights reserved.</p>
+    <p>© <span id="year"></span> Jackie Schroeder · Stanley, North Dakota · <a href="https://www.linkedin.com/in/jacqueline-schroeder-ab7b7210b" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
   <script>
@@ -205,8 +370,9 @@
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       document.querySelectorAll('.tab-btn').forEach(b => {
-        if (b.getAttribute('onclick').includes(id)) b.classList.add('active');
+        if (b.getAttribute('onclick').includes("'" + id + "'")) b.classList.add('active');
       });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>

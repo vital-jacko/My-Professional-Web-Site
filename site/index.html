@@ -34,6 +34,7 @@
       <button class="tab-btn"           onclick="switchTab('skills')">Skills</button>
       <button class="tab-btn"           onclick="switchTab('projects')">Projects</button>
       <button class="tab-btn"           onclick="switchTab('built-with')">Built With</button>
+      <button class="tab-btn"           onclick="switchTab('streamlit-guide')">Streamlit &amp; AWS</button>
       <button class="tab-btn"           onclick="switchTab('contact')">Contact</button>
     </div>
   </nav>
@@ -55,11 +56,11 @@
 
       <div class="stat-row">
         <div class="stat">
-          <span class="stat-number">13+</span>
+          <span class="stat-number" data-target="13" data-suffix="+">13+</span>
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat">
-          <span class="stat-number">3</span>
+          <span class="stat-number" data-target="3">3</span>
           <span class="stat-label">AWS Certifications</span>
         </div>
         <div class="stat">
@@ -67,7 +68,7 @@
           <span class="stat-label">University of Mary</span>
         </div>
         <div class="stat">
-          <span class="stat-number">90%</span>
+          <span class="stat-number" data-target="90" data-suffix="%">90%</span>
           <span class="stat-label">Increase in Data-Driven Decisions</span>
         </div>
       </div>
@@ -333,6 +334,131 @@
       </p>
     </section>
 
+    <!-- ── Streamlit & AWS ── -->
+    <section id="streamlit-guide" class="tab-panel">
+      <h3>Streamlit &amp; AWS</h3>
+      <p>
+        Across my work at Crescent Energy and beyond, I've designed and supported Streamlit applications that turn raw data into
+        interactive tools stakeholders actually use. Here's how I think about building and deploying them on AWS.
+      </p>
+
+      <h4 class="section-subheading">Why Streamlit</h4>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h4>Fast Time to Value</h4>
+          <p>A Python script becomes a shareable web app in minutes. No frontend overhead means data teams can own the full product — from pipeline to UI.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h4>Built for Data</h4>
+          <p>Native support for dataframes, charts, and metrics means less glue code. I focus on the logic and the story, not the rendering layer.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h4>AWS-Native Fit</h4>
+          <p>Streamlit pairs naturally with S3, Athena, and RDS. Combined with IAM roles and Secrets Manager, it fits cleanly into a secure AWS data architecture.</p>
+        </div>
+      </div>
+
+      <h4 class="section-subheading">How I Structure Applications</h4>
+      <p>
+        Clean separation between data, logic, and UI is what makes Streamlit apps maintainable at scale.
+        I consistently apply this layout across projects:
+      </p>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">📁</div>
+          <h4>Entry Point</h4>
+          <p><code>app.py</code> stays thin — routing and layout only. Business logic lives in <code>utils/</code>, reusable components in <code>components/</code>.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗂️</div>
+          <h4>Multi-Page Navigation</h4>
+          <p>Each page in <code>pages/</code> is an independent module. Numbered prefixes control order. This keeps large apps navigable without a custom router.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h4>Secrets &amp; Config</h4>
+          <p>Credentials never touch the codebase. Locally I use <code>.streamlit/secrets.toml</code>. On AWS, environment variables sourced from Secrets Manager.</p>
+        </div>
+      </div>
+
+      <h4 class="section-subheading">AWS Deployment Approaches</h4>
+      <p>The right deployment target depends on the audience, scale, and how much infrastructure ownership makes sense for the team.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🖥️</div>
+          <h4>EC2</h4>
+          <p>Full OS control. I use this when the app needs persistent background processes, custom networking, or sits inside an existing VPC with strict access controls.</p>
+          <div class="timeline-tags" style="margin-top:0.75rem">
+            <span class="tag">Most control</span><span class="tag">Most maintenance</span><span class="tag">Custom networking</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🐳</div>
+          <h4>ECS Fargate</h4>
+          <p>My go-to for production workloads. Containerized, no server management, integrates cleanly with ALB and IAM task roles. Scales independently of other services.</p>
+          <div class="timeline-tags" style="margin-top:0.75rem">
+            <span class="tag">Production-ready</span><span class="tag">Auto-scaling</span><span class="tag">ALB + VPC</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h4>App Runner</h4>
+          <p>Fastest path from container to HTTPS URL. I reach for this for internal tools and demos where the priority is speed of delivery over infrastructure flexibility.</p>
+          <div class="timeline-tags" style="margin-top:0.75rem">
+            <span class="tag">Fastest deploy</span><span class="tag">HTTPS out of the box</span><span class="tag">Scales to zero</span>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="section-subheading">Key Principles I Apply</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Performance</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Cache data fetches with <code>@st.cache_data</code> — S3 and Athena calls should happen once per session, not on every interaction.</li>
+            <li>Push heavy transforms into the data layer, not the UI layer. Streamlit reruns the full script on every widget interaction.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Security</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>IAM roles on the compute layer — never static credentials in code or environment files on the instance.</li>
+            <li>Least-privilege access: the app role gets exactly the S3 prefixes, Athena workgroups, or RDS schemas it needs and nothing more.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Usability</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Sidebar filters and column layouts keep dashboards scannable. I apply the same UX review framework I use for Spotfire and Power BI.</li>
+            <li>Meaningful loading states and error messages — users should always know what the app is doing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-tags" style="margin-top:1.5rem">
+        <span class="tag">Streamlit</span>
+        <span class="tag">Python</span>
+        <span class="tag">AWS</span>
+        <span class="tag">S3</span>
+        <span class="tag">Athena</span>
+        <span class="tag">ECS</span>
+        <span class="tag">App Runner</span>
+        <span class="tag">IAM</span>
+        <span class="tag">Secrets Manager</span>
+        <span class="tag">boto3</span>
+      </div>
+
+    </section>
+
     <!-- ── Contact ── -->
     <section id="contact" class="tab-panel">
       <h3>Contact</h3>
@@ -362,9 +488,14 @@
     <p>© <span id="year"></span> Jackie Schroeder · Stanley, North Dakota · <a href="https://www.linkedin.com/in/jacqueline-schroeder-ab7b7210b" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
   <script>
+    // ── Year ──
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // ── Tab switching with URL hash ──
     function switchTab(id) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -372,8 +503,65 @@
       document.querySelectorAll('.tab-btn').forEach(b => {
         if (b.getAttribute('onclick').includes("'" + id + "'")) b.classList.add('active');
       });
+      history.replaceState(null, '', '#' + id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (id === 'about') animateCounters();
     }
+
+    // ── Hash routing on load ──
+    (function () {
+      const hash = location.hash.replace('#', '');
+      const valid = ['about','experience','skills','projects','built-with','streamlit-guide','contact'];
+      if (hash && valid.includes(hash)) switchTab(hash);
+      else animateCounters();
+    })();
+
+    // ── Animated stat counters ──
+    let countersRun = false;
+    function animateCounters() {
+      if (countersRun) return;
+      countersRun = true;
+      document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const isFloat = el.dataset.float === 'true';
+        const duration = 1200;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const value = target * ease;
+          el.textContent = prefix + (isFloat ? value.toFixed(1) : Math.floor(value)) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    // ── Copy-to-clipboard on code blocks ──
+    document.querySelectorAll('.code-block').forEach(block => {
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', () => {
+        const code = block.querySelector('code');
+        navigator.clipboard.writeText(code.innerText).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      block.style.position = 'relative';
+      block.appendChild(btn);
+    });
+
+    // ── Scroll-to-top button ──
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>

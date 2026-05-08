@@ -6,8 +6,9 @@ A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrast
 
 ```
 ├── site/                        # Frontend — deployed to S3
-│   ├── index.html
-│   └── styles.css
+│   ├── index.html               # Single-page app — all tabs, JS, and content
+│   ├── styles.css               # All styles
+│   └── cloud-background.png     # Hero image
 └── infrastructure/
     └── terraform/
         ├── main.tf
@@ -22,6 +23,15 @@ A static personal portfolio site hosted on AWS via S3 + CloudFront, with infrast
 - ACM — DNS-validated TLS certificate (us-east-1)
 - Route 53 — A records for root and `www` pointing to CloudFront
 
+## Frontend Features
+
+- Tab-based SPA navigation with URL hash routing (deep-linkable)
+- Animated stat counters on page load
+- Copy-to-clipboard on all code blocks
+- Scroll-to-top button
+- Streamlit & AWS tab — portfolio-style showcase of approach, structure, and deployment experience
+- No frameworks, no build step — plain HTML, CSS, and JS
+
 ## Deploying
 
 ```bash
@@ -34,6 +44,12 @@ terraform apply
 
 ```bash
 aws s3 sync site/ s3://databyschroeder.com --delete
+```
+
+### Invalidate CloudFront Cache (after content updates)
+
+```bash
+aws cloudfront create-invalidation --distribution-id <distribution-id> --paths "/*"
 ```
 
 ## Prerequisites

@@ -7,6 +7,7 @@
 - [Update Site Content](#update-site-content)
 - [Update Infrastructure](#update-infrastructure)
 - [Invalidate CloudFront Cache](#invalidate-cloudfront-cache)
+- [JavaScript Features](#javascript-features)
 - [Tear Down Infrastructure](#tear-down-infrastructure)
 
 ---
@@ -95,6 +96,31 @@ Replace `EXXXXXXXXXXXXX` with your actual distribution ID.
 To find your distribution ID:
 - Check Terraform outputs after `terraform apply`
 - Or go to AWS Console → CloudFront → Distributions
+
+---
+
+## JavaScript Features
+All JS is inline in `site/index.html` — no build step, no dependencies.
+
+| Feature | How it works |
+|---|---|
+| **URL hash routing** | Switching tabs updates `location.hash` (e.g. `#experience`). On page load, the hash is read and the correct tab is activated automatically. Share or bookmark any tab directly. |
+| **Animated stat counters** | The About tab stats (13+, 3, 90%) count up from zero on first load using `requestAnimationFrame` with an ease-out curve. Controlled via `data-target` and `data-suffix` attributes on `.stat-number` elements. |
+| **Copy-to-clipboard** | Every `.code-block` in the Streamlit Guide gets a **Copy** button injected automatically by JS. Clicking it writes the code to the clipboard and shows a **Copied!** confirmation for 2 seconds. |
+| **Scroll-to-top button** | A fixed button appears in the bottom-right corner after scrolling 300px. Clicking it smoothly scrolls back to the top. |
+
+### Adding a new code block
+Any `<pre class="code-block"><code>...</code></pre>` added to the page will automatically get a Copy button — no extra markup needed.
+
+### Deep-linking to a tab
+Append the tab ID as a hash to the URL:
+```
+https://databyschroeder.com/#experience
+https://databyschroeder.com/#streamlit-guide
+https://databyschroeder.com/#projects
+```
+
+The `switchGuideTab` function is no longer used and can be safely removed if the Streamlit & AWS tab is kept in its current portfolio style (no sub-tabs).
 
 ---
 
